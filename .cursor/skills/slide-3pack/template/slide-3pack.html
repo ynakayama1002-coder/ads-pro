@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><!-- DECK_TITLE -->ADS Pro トークン対効果（3枚）<!-- /DECK_TITLE --></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css" />
+</head>
+<body>
+  <!--
+    ADS Pro Slide 3-Pack template
+    Design: Signal Numbers (C) + Split Frame question rail (B)
+    Fill each <!-- SLOT:... --> block. Keep exactly 3 slides.
+  -->
+  <main class="deck" aria-live="polite">
+    <!-- SLIDE 1 -->
+    <section class="slide is-active" data-slide="1" aria-label="スライド1">
+      <aside class="rail">
+        <div class="rail-num">01</div>
+        <div class="rail-question">どの仕事を、<br />どう変えたいか</div>
+        <div class="rail-meta">Work</div>
+      </aside>
+      <div class="main">
+        <h1 class="title"><!-- S1_TITLE -->（12〜28字のタイトル）<!-- /S1_TITLE --></h1>
+        <p class="lead"><!-- S1_LEAD -->今のやり方と、AIとの分業を一文で。<!-- /S1_LEAD --></p>
+        <ul class="points">
+          <li><strong>今:</strong> <!-- S1_NOW -->…<!-- /S1_NOW --></li>
+          <li><strong>AIに任せる:</strong> <!-- S1_AI -->…<!-- /S1_AI --></li>
+          <li><strong>人が残す:</strong> <!-- S1_HUMAN -->…<!-- /S1_HUMAN --></li>
+        </ul>
+        <div class="accent-bar" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2 -->
+    <section class="slide" data-slide="2" aria-label="スライド2">
+      <aside class="rail">
+        <div class="rail-num">02</div>
+        <div class="rail-question">どれくらい<br />良くなりそうか</div>
+        <div class="rail-meta">Effect</div>
+      </aside>
+      <div class="main">
+        <div class="signal"><!-- S2_SIGNAL -->¥00,000<!-- /S2_SIGNAL --></div>
+        <h1 class="title"><!-- S2_TITLE -->効果タイトル<!-- /S2_TITLE --></h1>
+        <p class="formula"><!-- S2_FORMULA -->件数 × 短縮時間 = 時間 × 単価 = 月額<!-- /S2_FORMULA --></p>
+        <ul class="points">
+          <li><strong>型:</strong> <!-- S2_TYPE -->人の時間が空く / 利益増 / 支払い減<!-- /S2_TYPE --></li>
+          <li><strong>控えめ:</strong> <!-- S2_CONSERVATIVE -->…<!-- /S2_CONSERVATIVE --></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SLIDE 3 -->
+    <section class="slide" data-slide="3" aria-label="スライド3">
+      <aside class="rail">
+        <div class="rail-num">03</div>
+        <div class="rail-question">AIにいくらまで<br />使ってよいか</div>
+        <div class="rail-meta">Ceiling</div>
+      </aside>
+      <div class="main">
+        <div class="signal"><!-- S3_SIGNAL -->¥00,000<!-- /S3_SIGNAL --></div>
+        <h1 class="title"><!-- S3_TITLE -->上限タイトル<!-- /S3_TITLE --></h1>
+        <p class="formula"><!-- S3_FORMULA -->月の効果 − 手元残し = 上限<!-- /S3_FORMULA --></p>
+        <ul class="points">
+          <li><strong>上限:</strong> <!-- S3_CEILING -->毎月のAI費用は … まで（AIに払うお金だけ）<!-- /S3_CEILING --></li>
+          <li><strong>理由:</strong> <!-- S3_REASON -->…<!-- /S3_REASON --></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <div class="controls">
+    <button type="button" data-action="prev">← 前へ</button>
+    <div class="dots" role="tablist" aria-label="スライド位置">
+      <button type="button" class="is-active" data-goto="1" aria-label="1枚目"></button>
+      <button type="button" data-goto="2" aria-label="2枚目"></button>
+      <button type="button" data-goto="3" aria-label="3枚目"></button>
+    </div>
+    <div>
+      <button type="button" data-action="notes">ノート</button>
+      <button type="button" data-action="next">次へ →</button>
+    </div>
+  </div>
+
+  <aside class="notes" id="speaker-notes" hidden>
+    <span class="notes-label">Speaker notes</span>
+    <div data-notes-for="1"><!-- S1_NOTES -->スライド1の口語説明。<!-- /S1_NOTES --></div>
+    <div data-notes-for="2" hidden><!-- S2_NOTES -->スライド2の口語説明。<!-- /S2_NOTES --></div>
+    <div data-notes-for="3" hidden><!-- S3_NOTES -->スライド3の口語説明。<!-- /S3_NOTES --></div>
+  </aside>
+
+  <script>
+    (() => {
+      const slides = [...document.querySelectorAll(".slide")];
+      const dots = [...document.querySelectorAll(".dots button")];
+      const notesRoot = document.getElementById("speaker-notes");
+      const noteBlocks = [...document.querySelectorAll("[data-notes-for]")];
+      let index = 0;
+      let notesOpen = false;
+
+      function show(i) {
+        index = (i + slides.length) % slides.length;
+        slides.forEach((el, n) => el.classList.toggle("is-active", n === index));
+        dots.forEach((el, n) => el.classList.toggle("is-active", n === index));
+        noteBlocks.forEach((el, n) => {
+          el.hidden = n !== index;
+        });
+      }
+
+      document.querySelector('[data-action="prev"]').addEventListener("click", () => show(index - 1));
+      document.querySelector('[data-action="next"]').addEventListener("click", () => show(index + 1));
+      document.querySelector('[data-action="notes"]').addEventListener("click", () => {
+        notesOpen = !notesOpen;
+        notesRoot.hidden = !notesOpen;
+        notesRoot.classList.toggle("is-open", notesOpen);
+      });
+      dots.forEach((btn) => {
+        btn.addEventListener("click", () => show(Number(btn.dataset.goto) - 1));
+      });
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight" || e.key === " ") {
+          e.preventDefault();
+          show(index + 1);
+        } else if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          show(index - 1);
+        } else if (e.key === "n" || e.key === "N") {
+          notesOpen = !notesOpen;
+          notesRoot.hidden = !notesOpen;
+          notesRoot.classList.toggle("is-open", notesOpen);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

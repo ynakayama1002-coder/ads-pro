@@ -46,5 +46,6 @@
 
 ## 参照ファイル
 
-- テンプレ: `template/slide-3pack.html`
-- テーマCSS: `template/theme.css`
+- 提出用テンプレ（単体HTML）: `template/slide-3pack.html`
+- テーマ原紙（編集用）: `template/theme.css`  
+  提出物は HTML 1ファイル。CSSは `<style>` に内包する。

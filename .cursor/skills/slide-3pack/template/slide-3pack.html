@@ -61,7 +61,7 @@ body {
   position: absolute;
   inset: 0;
   display: none;
-  grid-template-columns: 22% 1fr;
+  grid-template-columns: 20% 1fr;
 }
 
 .slide.is-active {
@@ -71,16 +71,16 @@ body {
 .rail {
   background: var(--rail);
   border-right: 1px solid var(--line);
-  padding: clamp(1rem, 3.2vh, 2rem) clamp(0.8rem, 1.6vw, 1.4rem);
+  padding: clamp(1.1rem, 3.4vh, 2.1rem) clamp(0.85rem, 1.5vw, 1.25rem);
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
 .rail-num {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+  font-size: clamp(1.5rem, 3.4vw, 2.35rem);
   color: var(--accent);
   letter-spacing: 0.04em;
   line-height: 1;
@@ -89,36 +89,36 @@ body {
 .rail-question {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(0.78rem, 1.35vw, 1.05rem);
-  line-height: 1.45;
+  font-size: clamp(0.8rem, 1.4vw, 1.08rem);
+  line-height: 1.4;
   color: var(--ink);
 }
 
 .rail-meta {
   margin-top: auto;
   font-family: var(--font-display);
-  font-size: clamp(0.65rem, 1vw, 0.8rem);
+  font-size: clamp(0.65rem, 1vw, 0.78rem);
   color: var(--muted);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .main {
-  padding: clamp(1.1rem, 4vh, 2.4rem) clamp(1.2rem, 4vw, 2.8rem);
+  padding: clamp(1.35rem, 4.4vh, 2.6rem) clamp(1.5rem, 4.4vw, 3rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: clamp(0.7rem, 1.8vh, 1.2rem);
+  gap: clamp(0.85rem, 2vh, 1.25rem);
   min-width: 0;
 }
 
 .signal {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(2.4rem, 7.2vw, 5.2rem);
-  line-height: 0.95;
+  font-size: clamp(2.8rem, 7.8vw, 5.6rem);
+  line-height: 0.92;
   color: var(--accent);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
 }
 
@@ -126,32 +126,64 @@ body {
   margin: 0;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.25rem, 2.8vw, 2.15rem);
-  line-height: 1.25;
+  font-size: clamp(1.35rem, 2.9vw, 2.25rem);
+  line-height: 1.22;
   color: var(--ink);
   letter-spacing: -0.02em;
+  max-width: 28ch;
 }
 
 .lead {
   margin: 0;
   color: var(--muted);
-  font-size: clamp(0.9rem, 1.35vw, 1.1rem);
-  line-height: 1.5;
+  font-size: clamp(0.95rem, 1.4vw, 1.12rem);
+  line-height: 1.45;
+  max-width: 42ch;
+}
+
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.55rem;
+  margin: 0.1rem 0 0.15rem;
+  padding: 0.7rem 0.85rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-size: clamp(0.82rem, 1.25vw, 1.02rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.flow-step {
+  white-space: nowrap;
+}
+
+.flow-step.is-ai {
+  color: var(--accent);
+}
+
+.flow-arrow {
+  color: var(--muted);
+  font-weight: 500;
 }
 
 .points {
   list-style: none;
-  margin: 0.2rem 0 0;
+  margin: 0.15rem 0 0;
   padding: 0;
   display: grid;
-  gap: 0.55rem;
+  gap: 0.65rem;
 }
 
 .points li {
   position: relative;
-  padding-left: 1rem;
-  font-size: clamp(0.92rem, 1.4vw, 1.15rem);
-  line-height: 1.45;
+  padding-left: 1.05rem;
+  font-size: clamp(0.95rem, 1.4vw, 1.14rem);
+  line-height: 1.42;
+  max-width: 46ch;
 }
 
 .points li::before {
@@ -159,8 +191,8 @@ body {
   position: absolute;
   left: 0;
   top: 0.55em;
-  width: 0.4rem;
-  height: 0.4rem;
+  width: 0.38rem;
+  height: 0.38rem;
   border-radius: 1px;
   background: var(--accent);
 }
@@ -171,21 +203,34 @@ body {
 }
 
 .formula {
-  margin: 0.15rem 0 0;
-  padding: 0.75rem 0.9rem;
+  margin: 0.05rem 0 0;
+  padding: 0.85rem 1rem;
   background: var(--panel);
   border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
   font-family: var(--font-display);
-  font-size: clamp(0.85rem, 1.35vw, 1.1rem);
-  line-height: 1.45;
+  font-size: clamp(0.95rem, 1.45vw, 1.18rem);
+  line-height: 1.4;
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.formula-label {
+  display: block;
+  margin-bottom: 0.28rem;
+  font-size: clamp(0.68rem, 1vw, 0.78rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .accent-bar {
   width: 4.5rem;
   height: 3px;
   background: var(--accent);
-  margin-top: 0.35rem;
+  margin-top: 0.2rem;
 }
 
 .controls {
@@ -267,19 +312,23 @@ body {
   }
 
   .slide {
-    grid-template-columns: 28% 1fr;
+    grid-template-columns: 26% 1fr;
+  }
+
+  .flow {
+    gap: 0.35rem;
   }
 }
   </style>
 </head>
 <body>
   <!--
-    ADS Pro Slide 3-Pack template
+    ADS Pro Slide 3-Pack template (B polish)
     Design: Signal Numbers (C) + Split Frame question rail (B)
-    Fill each <!-- SLOT:... --> block. Keep exactly 3 slides.
+    Slide 1 includes a one-line .flow strip. Keep exactly 3 slides.
+    CSS must be inlined from theme.css (single-file deliverable).
   -->
   <main class="deck" aria-live="polite">
-    <!-- SLIDE 1 -->
     <section class="slide is-active" data-slide="1" aria-label="スライド1">
       <aside class="rail">
         <div class="rail-num">01</div>
@@ -289,6 +338,15 @@ body {
       <div class="main">
         <h1 class="title"><!-- S1_TITLE -->（12〜28字のタイトル）<!-- /S1_TITLE --></h1>
         <p class="lead"><!-- S1_LEAD -->今のやり方と、AIとの分業を一文で。<!-- /S1_LEAD --></p>
+        <div class="flow" aria-label="変更後の流れ">
+          <!-- S1_FLOW -->
+          <span class="flow-step">依頼</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step is-ai">AIが下書き</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">人が承認・送信</span>
+          <!-- /S1_FLOW -->
+        </div>
         <ul class="points">
           <li><strong>今:</strong> <!-- S1_NOW -->…<!-- /S1_NOW --></li>
           <li><strong>AIに任せる:</strong> <!-- S1_AI -->…<!-- /S1_AI --></li>
@@ -298,7 +356,6 @@ body {
       </div>
     </section>
 
-    <!-- SLIDE 2 -->
     <section class="slide" data-slide="2" aria-label="スライド2">
       <aside class="rail">
         <div class="rail-num">02</div>
@@ -308,7 +365,10 @@ body {
       <div class="main">
         <div class="signal"><!-- S2_SIGNAL -->¥00,000<!-- /S2_SIGNAL --></div>
         <h1 class="title"><!-- S2_TITLE -->効果タイトル<!-- /S2_TITLE --></h1>
-        <p class="formula"><!-- S2_FORMULA -->件数 × 短縮時間 = 時間 × 単価 = 月額<!-- /S2_FORMULA --></p>
+        <p class="formula">
+          <span class="formula-label">計算</span>
+          <!-- S2_FORMULA -->件数 × 短縮時間 = 時間 × 単価 = 月額<!-- /S2_FORMULA -->
+        </p>
         <ul class="points">
           <li><strong>型:</strong> <!-- S2_TYPE -->人の時間が空く / 利益増 / 支払い減<!-- /S2_TYPE --></li>
           <li><strong>控えめ:</strong> <!-- S2_CONSERVATIVE -->…<!-- /S2_CONSERVATIVE --></li>
@@ -316,7 +376,6 @@ body {
       </div>
     </section>
 
-    <!-- SLIDE 3 -->
     <section class="slide" data-slide="3" aria-label="スライド3">
       <aside class="rail">
         <div class="rail-num">03</div>
@@ -326,7 +385,10 @@ body {
       <div class="main">
         <div class="signal"><!-- S3_SIGNAL -->¥00,000<!-- /S3_SIGNAL --></div>
         <h1 class="title"><!-- S3_TITLE -->上限タイトル<!-- /S3_TITLE --></h1>
-        <p class="formula"><!-- S3_FORMULA -->月の効果 − 手元残し = 上限<!-- /S3_FORMULA --></p>
+        <p class="formula">
+          <span class="formula-label">上限の式</span>
+          <!-- S3_FORMULA -->月の効果 − 手元残し = 上限<!-- /S3_FORMULA -->
+        </p>
         <ul class="points">
           <li><strong>上限:</strong> <!-- S3_CEILING -->毎月のAI費用は … まで（AIに払うお金だけ）<!-- /S3_CEILING --></li>
           <li><strong>理由:</strong> <!-- S3_REASON -->…<!-- /S3_REASON --></li>

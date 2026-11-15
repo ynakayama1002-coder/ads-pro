@@ -130,7 +130,7 @@ body {
   line-height: 1.22;
   color: var(--ink);
   letter-spacing: -0.02em;
-  max-width: 28ch;
+  max-width: 100%;
 }
 
 .lead {
@@ -138,7 +138,7 @@ body {
   color: var(--muted);
   font-size: clamp(0.95rem, 1.4vw, 1.12rem);
   line-height: 1.45;
-  max-width: 42ch;
+  max-width: 100%;
 }
 
 .flow {
@@ -183,7 +183,7 @@ body {
   padding-left: 1.05rem;
   font-size: clamp(0.95rem, 1.4vw, 1.14rem);
   line-height: 1.42;
-  max-width: 46ch;
+  max-width: 100%;
 }
 
 .points li::before {
@@ -214,6 +214,7 @@ body {
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .formula-label {
@@ -318,6 +319,10 @@ body {
   .flow {
     gap: 0.35rem;
   }
+
+  .formula {
+    white-space: normal;
+  }
 }
   </style>
 </head>
@@ -389,7 +394,7 @@ body {
         </p>
         <ul class="points">
           <li><strong>上限:</strong> 毎月のAI費用は ¥10,000 まで（AIに払うお金だけ）</li>
-          <li><strong>理由:</strong> 目的は時間創出で金銭回収は二の次／月1万円なら継続・停止を判断しやすい</li>
+          <li><strong>理由:</strong> 目的は時間創出で金銭回収は二の次<br />月1万円なら継続・停止を判断しやすい</li>
         </ul>
       </div>
     </section>

@@ -86,4 +86,4 @@ description: >-
 
 ## 参照してよいファイル
 
-- `2026年11月/月次課題/課題内容.txt`
+- `1st lecture/monthly-assignment/課題内容.txt`

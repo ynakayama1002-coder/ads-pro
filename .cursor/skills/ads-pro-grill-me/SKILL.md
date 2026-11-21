@@ -92,5 +92,5 @@ description: >-
 
 ## 参照してよいファイル
 
-- `1st lecture/monthly-assignment/課題内容.txt`
-- 必要なら講義メモ: `1st lecture/lecture-material/`
+- `lectures/1st/monthly-assignment/assignment.md`
+- 必要なら講義メモ: `lectures/1st/lecture-material/`

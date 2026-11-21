@@ -86,4 +86,4 @@ description: >-
 
 ## 参照してよいファイル
 
-- `1st lecture/monthly-assignment/課題内容.txt`
+- `lectures/1st/monthly-assignment/assignment.md`

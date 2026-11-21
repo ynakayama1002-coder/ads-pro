@@ -24,7 +24,7 @@ description: >-
 - Google スライドの内容（コピペ・要約・共有内容）
 - 提出予定のメモ
 
-正本: `1st lecture/monthly-assignment/課題内容.txt`
+正本: `lectures/1st/monthly-assignment/assignment.md`
 
 ## 判定基準
 
@@ -73,4 +73,4 @@ description: >-
 
 ## 参照してよいファイル
 
-- `1st lecture/monthly-assignment/課題内容.txt`
+- `lectures/1st/monthly-assignment/assignment.md`

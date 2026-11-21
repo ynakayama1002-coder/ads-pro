@@ -92,5 +92,5 @@ description: >-
 
 ## 参照してよいファイル
 
-- `2026年11月/月次課題/課題内容.txt`
-- 必要なら講義メモ: `2026年11月/１回目授業/`
+- `1st lecture/monthly-assignment/課題内容.txt`
+- 必要なら講義メモ: `1st lecture/lecture-material/`

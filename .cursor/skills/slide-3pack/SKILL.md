@@ -66,7 +66,7 @@ description: >-
 ## 出力手順（必須）
 
 1. `template/slide-3pack.html` を提出用パスへコピーする  
-   例: `2026年11月/月次課題/slides/index.html` および分かりやすい別名（例: `会議日程調整_スライド.html`）  
+   例: `1st lecture/monthly-assignment/slides/index.html` および分かりやすい別名（例: `会議日程調整_スライド.html`）  
    - **CSSは既にHTML内に埋め込み済み。`theme.css` を横に置かない。**
    - ブラウザ単体で開けること（`file://` でも可）。外部CSS依存は禁止。
 2. HTML のスロット（`<!-- S1_TITLE -->` など）を実データで埋める  
@@ -111,5 +111,5 @@ description: >-
 
 ## 参照してよいファイル
 
-- `2026年11月/月次課題/課題内容.txt`
+- `1st lecture/monthly-assignment/課題内容.txt`
 - このスキル配下の `DESIGN.md` / `template/`

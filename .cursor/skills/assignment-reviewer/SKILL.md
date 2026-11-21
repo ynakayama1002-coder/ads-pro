@@ -24,7 +24,7 @@ description: >-
 - Google スライドの内容（コピペ・要約・共有内容）
 - 提出予定のメモ
 
-正本: `2026年11月/月次課題/課題内容.txt`
+正本: `1st lecture/monthly-assignment/課題内容.txt`
 
 ## 判定基準
 
@@ -73,4 +73,4 @@ description: >-
 
 ## 参照してよいファイル
 
-- `2026年11月/月次課題/課題内容.txt`
+- `1st lecture/monthly-assignment/課題内容.txt`

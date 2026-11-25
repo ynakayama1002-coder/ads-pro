@@ -267,31 +267,53 @@ body {
   margin-top: 0.2rem;
 }
 
+.main-appendix {
+  gap: 0.7rem;
+}
+
+.main-appendix .title {
+  font-size: clamp(1.2rem, 2.35vw, 1.85rem);
+}
+
 .appendix {
-  display: flex;
-  flex-direction: column;
-  gap: 0.72rem;
+  display: grid;
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  gap: 0.4rem 1.15rem;
+  align-items: start;
 }
 
-.appendix .flow {
-  margin: 0;
-  padding: 0.45rem 0.75rem;
+.old-tree {
+  margin: 0.15rem 0 0;
+  padding: 0.65rem 0.8rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 0.18rem;
 }
 
-.before-note {
-  margin: -0.35rem 0 0;
-  color: var(--muted);
-  font-size: clamp(0.82rem, 1.15vw, 0.98rem);
-  line-height: 1.4;
+.old-tree .tree-row {
+  grid-template-columns: minmax(7.4rem, 0.82fr) minmax(0, 1.18fr);
+  gap: 0.3rem 0.55rem;
+  font-size: clamp(0.76rem, 1.12vw, 0.96rem);
+  line-height: 1.32;
+}
+
+.old-tree .tree-row.is-child {
+  padding-left: 0.95rem;
 }
 
 .appendix-label {
-  margin: 0.15rem 0 0;
+  margin: 0;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(0.95rem, 1.4vw, 1.12rem);
+  font-size: clamp(0.92rem, 1.32vw, 1.08rem);
   line-height: 1.3;
   color: var(--accent);
+}
+
+.appendix-copy {
+  display: grid;
+  gap: 0.55rem;
 }
 
 .gaps {
@@ -299,14 +321,14 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.32rem;
+  gap: 0.28rem;
 }
 
 .gaps li {
   position: relative;
-  padding-left: 0.95rem;
-  font-size: clamp(0.9rem, 1.28vw, 1.06rem);
-  line-height: 1.4;
+  padding-left: 0.9rem;
+  font-size: clamp(0.82rem, 1.16vw, 0.98rem);
+  line-height: 1.38;
 }
 
 .gaps li::before {
@@ -465,20 +487,46 @@ body {
   }
 
   .appendix {
+    grid-template-columns: 1fr;
     gap: 0.28rem;
   }
 
-  .appendix-label {
-    font-size: 0.78rem;
+  .main-appendix {
+    gap: 0.35rem;
   }
 
-  .before-note,
+  .main-appendix .title {
+    font-size: 1rem;
+  }
+
+  .old-tree {
+    padding: 0.28rem 0.4rem;
+    gap: 0.02rem;
+  }
+
+  .old-tree .tree-row {
+    font-size: 0.64rem;
+    gap: 0.1rem 0.3rem;
+  }
+
+  .old-tree .tree-row.is-child {
+    padding-left: 0.5rem;
+  }
+
+  .appendix-label {
+    font-size: 0.74rem;
+  }
+
+  .appendix-copy {
+    gap: 0.22rem;
+  }
+
   .gaps li {
-    font-size: 0.68rem;
+    font-size: 0.64rem;
   }
 
   .gaps {
-    gap: 0.08rem;
+    gap: 0.06rem;
   }
 }
   </style>
@@ -564,30 +612,33 @@ body {
         <div class="rail-question">Appendix</div>
         <div class="rail-meta">Extra</div>
       </aside>
-      <div class="main">
+      <div class="main main-appendix">
         <h1 class="title">受ける前の置き方と、これから</h1>
         <div class="appendix">
-          <div class="flow" aria-label="受ける前の構成">
-            <span class="flow-step">2026年11月/</span>
-            <span class="flow-arrow">→</span>
-            <span class="flow-step">月次課題</span>
-            <span class="flow-arrow">·</span>
-            <span class="flow-step">１回目授業</span>
-            <span class="flow-arrow">·</span>
-            <span class="flow-step">技術課題</span>
+          <div>
+            <h2 class="appendix-label">受ける前</h2>
+            <div class="old-tree" aria-label="2nd lecture を受ける前の構成">
+              <div class="tree-row is-root"><span>ads-pro/</span></div>
+              <div class="tree-row"><span>2026年11月/</span></div>
+              <div class="tree-row is-child"><span>月次課題/</span><span class="tree-role">スライド・原稿など</span></div>
+              <div class="tree-row is-child"><span>１回目授業/</span><span class="tree-role">講義文字起こし・図</span></div>
+              <div class="tree-row is-child"><span>技術課題/</span><span class="tree-role">グループセッション文字起こしのみ</span></div>
+              <div class="tree-row"><span>.cursor/skills/</span><span class="tree-role">スキル類（触らない想定）</span></div>
+            </div>
           </div>
-          <p class="before-note">.cursor/skills/ は触らない想定。</p>
-          <h2 class="appendix-label">講義の指針とのずれ</h2>
-          <ul class="gaps">
-            <li>名前が日本語と日付。指針は英語の小文字と、回の名前。</li>
-            <li>月で束ねると、次の月に同じ置き場がもう一つできる。</li>
-            <li>技術課題の中身は、セッションの文字起こしだけ。AGENTS.md も program.md もない。</li>
-          </ul>
-          <h2 class="appendix-label">拡張性について</h2>
-          <ul class="gaps">
-            <li>文字起こしと課題は、いまも人が手で取って格納している。</li>
-            <li>Cursor や ChatGPT に、「取ってきて、所定の場所へ置く」と指示できる。</li>
-          </ul>
+          <div class="appendix-copy">
+            <h2 class="appendix-label">講義の指針とのずれ</h2>
+            <ul class="gaps">
+              <li>名前が日本語と日付。指針は英語の小文字と、回の名前。</li>
+              <li>月で束ねると、次の月に同じ置き場がもう一つできる。</li>
+              <li>技術課題の中身は、セッションの文字起こしだけ。<br />AGENTS.md も program.md もない。</li>
+            </ul>
+            <h2 class="appendix-label">拡張性について</h2>
+            <ul class="gaps">
+              <li>文字起こしと課題は、いまも人が手で取って格納している。</li>
+              <li>Cursor や ChatGPT に、「取ってきて、所定の場所へ置く」と指示できる。</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
